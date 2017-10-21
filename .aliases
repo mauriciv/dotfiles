@@ -1,4 +1,4 @@
-alias py='python3.5'
+alias py='python3'
 alias art='php artisan'
 alias bigf='du -sh ./* | sort -h'
 alias bigfh='du -sh \.* | sort -h'
@@ -10,7 +10,6 @@ alias fd='find . -type d -iname'
 alias ff='find . -type f -iname'
 alias sai='sudo apt install'
 alias clima='curl -s "wttr.in/ciudad-del-este?lang=es"'
-alias firedev='$HOME/programas/firefox/firefox > /dev/null 2>&1 &!'
 alias composer='$HOME/composer.phar'
 alias art='php artisan'
 alias guver='guetzli --verbose'
@@ -37,5 +36,11 @@ alias aps='apt show'
 alias hlaps='hl --apt'
 alias fking-promises-how-do-they-work='mpv $HOME/Videos/laracasts/13-Promises-101.mp4'
 alias cdmedia='cd /media/mauricio'
-alias steam-dir='~/.local/share/Steam/steamapps/common'
+alias steam-dir='$HOME/.local/share/Steam/steamapps/common'
 alias recuperar-archivos-docx="ff '*.docx'|xargs -n 1 docx2txt"
+alias l.='ls -d .*'
+# `cat` with beautiful colors. requires: pip install -U Pygments
+alias c='pygmentize -O style=monokai -f console256 -g'
+alias dnfgp="dnf groupinfo"
+alias vimconfig="vim $HOME/.vimrc"
+alias dnffiles="repoquery -l"

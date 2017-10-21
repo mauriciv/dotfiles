@@ -101,8 +101,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -122,10 +122,6 @@ export PATH="$PATH:~/.composer/vendor/bin"
 export PATH="$PATH:~/scripts_utiles"
 export PATH="$PATH:~/pico-8"
 
-#Grunt auto-completion
-eval "$(grunt --completion=bash)"
-
-. ~/scripts_utiles/z.sh
 
 # set options for less
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
@@ -140,3 +136,14 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/mauricio/.sdkman"
+[[ -s "/home/mauricio/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mauricio/.sdkman/bin/sdkman-init.sh"
+
+###-tns-completion-start-###
+if [ -f /home/mauricio/.tnsrc ]; then
+    source /home/mauricio/.tnsrc
+fi
+###-tns-completion-end-###
+eval $(dircolors -b $HOME/.dircolors)

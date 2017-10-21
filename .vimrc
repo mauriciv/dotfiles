@@ -48,6 +48,7 @@ set clipboard=unnamed
 
 "==AIRLINE==
 let g:airline_theme='term'
+let g:airline_powerline_fonts = 1
 "==========
 
 "==SYNTASTIC==
@@ -77,5 +78,5 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 "============
 "
 "==ctrlp==
-set runtimepath^=~/.vim/bundle/ctrlp.vim 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 "========
