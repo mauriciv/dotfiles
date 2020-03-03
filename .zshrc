@@ -51,7 +51,7 @@ ZSH_THEME="frisk"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse extract)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git copyfile laravel5 battery cp z colorize fedora)
+plugins=(git copyfile laravel5 battery cp z colorize fedora jsontools zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,6 +91,7 @@ if [[ -s '/etc/zsh_command_not_found' ]]; then
 fi
 
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/Android/Sdk/tools
 export PATH=$PATH:$HOME/Android/Sdk/tools/bin
 export PATH=$PATH:$HOME/Android/Sdk/platform-tools
@@ -109,6 +110,9 @@ export LESS="-i -J -M -R -W"
 #export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 export ANDROID_HOME=$HOME/Android/Sdk
+export PATH="$HOME/.cargo/bin:$PATH"
+export ZSH_AUTOSUGGEST_STRATEGY=(completion)
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
 source $HOME/.aliases
 
 autoload -Uz cheat
@@ -130,27 +134,42 @@ if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
 fi
 
 ###-tns-completion-start-###
-if [ -f $HOME/.tnsrc ]; then 
-    source $HOME/.tnsrc 
+if [ -f $HOME/.tnsrc ]; then
+    source $HOME/.tnsrc
 fi
 ###-tns-completion-end-###
-eval $(dircolors $HOME/.dircolors)
-source $HOME/programas/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+if [ -f $HOME/.dircolors ]; then
+    eval $(dircolors $HOME/.dircolors)
+fi
+
+if [ -f $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 
 ### POWERLINE-GO
-#function powerline_precmd() {
-#    PS1="$(/usr/bin/powerline-go -shell zsh -error $? -shell zsh)"
-#}
-#
-#function install_powerline_precmd() {
-#  for s in "${precmd_functions[@]}"; do
-#    if [ "$s" = "powerline_precmd" ]; then
-#      return
-#    fi
-#  done
-#  precmd_functions+=(powerline_precmd)
-#}
-#
-#if [ "$TERM" != "linux" ]; then
-#    install_powerline_precmd
-#fi
+if [ -f /usr/bin/powerline-go ]; then
+
+    function powerline_precmd() {
+        PS1="$(/usr/bin/powerline-go -newline -shell zsh -error $? -shell zsh)"
+    }
+
+    function install_powerline_precmd() {
+        for s in "${precmd_functions[@]}"; do
+            if [ "$s" = "powerline_precmd" ]; then
+                return
+            fi
+        done
+        precmd_functions+=(powerline_precmd)
+    }
+
+    if [ "$TERM" != "linux" ]; then
+        install_powerline_precmd
+    fi
+
+fi
+
+if [ -f $HOME/.config/broot/launcher/bash/br ]; then
+    source $HOME/.config/broot/launcher/bash/br
+fi

@@ -6,11 +6,9 @@ alias pingoogle='ping -i 0.2 8.8.8.8'
 alias op='xdg-open'
 alias duh='du -h'
 alias zshconfig='vim ~/.zshrc'
-alias fd='find . -type d -iname'
-alias ff='find . -type f -iname'
 alias sai='sudo apt install'
-alias clima='curl -s "wttr.in/ciudad-del-este?lang=es"'
-alias composer='$HOME/composer.phar'
+alias clima='curl -s "wttr.in/?lang=es"'
+#alias composer='$HOME/composer.phar'
 alias art='php artisan'
 alias guver='guetzli --verbose'
 alias rm='rm -I'
@@ -44,3 +42,5 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 alias dnfgp="dnf groupinfo"
 alias vimconfig="vim $HOME/.vimrc"
 alias dnffiles="repoquery -l"
+alias firedev="$HOME/bin/firefox/firefox&!"
+alias ls=lsd
