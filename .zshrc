@@ -51,7 +51,7 @@ ZSH_THEME="frisk"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse extract)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git copyfile laravel5 battery cp z colorize fedora jsontools zsh-autosuggestions)
+plugins=(git copyfile laravel5 battery cp z colorize dnf jsontools zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,6 +99,7 @@ export PATH=$PATH:$HOME/programas/android-studio-preview/gradle/gradle-4.1-miles
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export PATH="$PATH:$HOME/pico-8"
 export PATH=$PATH:$HOME/scripts
+export PATH=$PATH:$HOME/dotfiles/scripts
 export PATH=$PATH:$HOME/programas
 export PATH=$PATH:$HOME/programas/firefox-developer-edition
 export PATH=$PATH:$HOME/programas/apache-maven-3.5.0/bin

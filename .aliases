@@ -44,3 +44,4 @@ alias vimconfig="vim $HOME/.vimrc"
 alias dnffiles="repoquery -l"
 alias firedev="$HOME/bin/firefox/firefox&!"
 alias ls=lsd
+alias bat="bat --terminal-width=-2"
