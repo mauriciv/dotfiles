@@ -97,6 +97,7 @@ export PATH=$PATH:$HOME/Android/Sdk/tools/bin
 export PATH=$PATH:$HOME/Android/Sdk/platform-tools
 export PATH=$PATH:$HOME/programas/android-studio-preview/gradle/gradle-4.1-milestone-1/bin
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/pico-8"
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/dotfiles/scripts
